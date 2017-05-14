@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @post.titulo %>
+</p>
+
+<p>
+  <strong>Visitas:</strong>
+  <%= @post.visits_count %>
+</p>
+
+<p>
+  <% if @post.has_photo? %>
+  <%= image_tag @post.photo_path %>
+      <% else %>
+  <b>Hubo un problema al subir tu producto!</b>
+      <% end %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

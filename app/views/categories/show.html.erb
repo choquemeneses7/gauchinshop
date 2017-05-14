@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="masthead">
+  <nav>
+    <ul class="nav nav-justified">
+      <li><a href="http://localhost:3000">Inicio </a></li>
+      <li><a href="http://localhost:3000/posts/new">Subir Producto</a></li>
+      <li><a href="http://localhost:3000/logout">Logout </a></li>
+    </ul>
+  </nav>
+</div>
+
+<p>
+
+
+</p>
+<h1 style="color:<%= @category.color%>;"> <%= @category.name %></h1>
+<p>
+  <div class="container">
+      <div class="row">
+        <% @category.posts.each do |post| %>
+            <div class="col-lg-4">
+              <h2> <%= post.titulo %></h2>
+              <% if post.has_photo? %>
+                  <%= image_tag post.photo_path, size: "300x300" %>
+              <% end %>
+            <p><a class="btn btn-primary" <%= link_to 'Volver', post %></a></p>
+            </div>
+        <% end %>
+        </div>
+</div>
+</p>
